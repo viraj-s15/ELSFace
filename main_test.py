@@ -18,7 +18,7 @@ import torch
 from torch.cuda.amp.autocast_mode import autocast
 import model
 from option import args as args_ipt
-from seg_model import BiSeNet
+from seg_models import BiSeNet
 import torch.nn as nn
 import torch.nn.parallel
 import torch.backends.cudnn as cudnn
@@ -391,7 +391,7 @@ def test(test_loader, model_ipt, model_ipt_t, args):
     psnr_out = AverageMeter()
     psnr_in = AverageMeter()
 
-    seg_net = BiSeNet(n_classes=19)
+    seg_net = BiSeNet(19,"resnet18")
     seg_net = seg_net.cuda()
     seg_net.load_state_dict(torch.load("./res/cp/79999_iter.pth"))
     seg_net.eval()
