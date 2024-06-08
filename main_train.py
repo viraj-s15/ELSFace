@@ -13,7 +13,7 @@ from data.data_1 import faces_data_int, High_Data
 import torchvision.models as models
 import torch
 from torch.cuda.amp.autocast_mode import autocast
-from seg_model import BiSeNet
+from seg_models import BiSeNet
 import torch.nn as nn
 import torch.nn.parallel
 import cv2
