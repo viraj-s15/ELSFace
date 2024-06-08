@@ -10,7 +10,7 @@ import torch
 from skimage.feature import canny
 
 High_Data = ["/data/dataset/celeba/train/"]
-
+Low_Data = ["/data/dataset/celeba/train/"]
 '''
 img_list = []
 img_labels = []
@@ -71,7 +71,7 @@ class faces_data_int(Dataset):
         
 
 if __name__ == "__main__":
-    data = faces_data_0(High_Data, Low_Data)
+    data = faces_data_int(High_Data, Low_Data)
     #exit()
     loader = DataLoader(dataset=data, batch_size=16, shuffle=True)
     for i, batch in enumerate(loader):
