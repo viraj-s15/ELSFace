@@ -12,7 +12,7 @@ from collections import OrderedDict
 import math
 import numpy as np
 import random
-from data.data_1 import faces_data, High_Data, Low_Data
+from data.data_1 import faces_data_int, High_Data, Low_Data
 import torchvision.models as models
 import torch
 from torch.cuda.amp.autocast_mode import autocast
@@ -230,7 +230,7 @@ def main_worker(gpu, ngpus_per_node, args):
 
     # Data loading code
     
-    data = faces_data(High_Data, Low_Data)
+    data = faces_data_int(High_Data, Low_Data)
     train_loader =  DataLoader(dataset=data, batch_size=4, shuffle=True)
     
     data_name = 'widerfacetest'
