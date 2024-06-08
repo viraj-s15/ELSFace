@@ -1,6 +1,6 @@
 import argparse
 import os
-from data.dataset import get_loader, get_int_loader, get_real_loader
+from data.dataset import get_int_loader
 import random
 import time
 import warnings
